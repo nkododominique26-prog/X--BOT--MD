@@ -14,7 +14,7 @@ if (fs.existsSync("config.env")) {
 	});
 }
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://aswin:D6dq0vk1xoQx_OO-Iv4ESQ@rough-doxle-2360.7s5.aws-ap-south-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"; // Corrected SQLite format
+const DATABASE_URL = process.env.DATABASE_URL || "postgresql://aswin:D6dq0vk1xoQx_OO-Iv4ESQ@rough-doxle-2360.7s5.aws-ap-south-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full";
 
 if (!DATABASE_URL.startsWith("sqlite://") && !DATABASE_URL.startsWith("postgres://") && !DATABASE_URL.startsWith("postgresql://")) {
 	throw new Error("Invalid DATABASE_URL format. Use 'sqlite://' or 'postgres://'");
@@ -61,7 +61,7 @@ module.exports = {
 	KOYEB_SERVICE_NAME: process.env.KOYEB_SERVICE_NAME || process.env.KOYEB_APP_NAME || process.env.KOYEB_NAME || "",
 	RENDER_API_KEY: process.env.RENDER_API_KEY || process.env.RENDER_KEY || "",
 	RENDER_APP_NAME: process.env.RENDER_APP_NAME || process.env.RENDER_NAME || "",
-	LANGUAGE: process.env.LANGUAGE || "french",
+	LANGUAGE: process.env.LANGUAGE || "english",
 	LOGS: toBool(process.env.LOGS || "false"),
 	MENU_TYPE: process.env.MENU_TYPE || "image", 
 	MENU_FONT: process.env.MENU_FONT || "tiny", 
@@ -70,14 +70,12 @@ module.exports = {
 	PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
 	READ_MESSAGES: toBool(process.env.READ_MESSAGES || "false"),
 	REJECT_CALL: toBool(process.env.REJECT_CALL || "false"),
-	REJECT_CALL_MSG: process.env.REJECT_CALL_MSG || "_Les appels ne sont pas autorisés sur ce numéro._",
+	REJECT_CALL_MSG: process.env.REJECT_CALL_MSG || "_Calls are not allowed. Please don’t call again!._",
 	SESSION_ID: process.env.SESSION_ID || "",
 	START_MSG: toBool(process.env.START_MSG || "true"),
-	STICKER_DATA: process.env.STICKER_DATA || `MR DOMS BOT;STOREDOMS`,
+	STICKER_DATA: process.env.STICKER_DATA || "MR DOMS BOT;STOREDOMS",
 	SUDO: process.env.SUDO || "917012984396",
 	WORK_TYPE: process.env.WORK_TYPE || "public",
-	
-	// CONFIGURATION MANUELLE STRICTE (Anti-Crash & Économie Mémoire)
 	SAVE_STATUS: toBool(process.env.SAVE_STATUS || "false"),
 	STATUS_REPLY: toBool(process.env.STATUS_REPLY || "false"),
 	STATUS_REPLY_MSG: process.env.STATUS_REPLY_MSG || "Vu",
